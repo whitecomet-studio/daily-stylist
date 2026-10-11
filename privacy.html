@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chính sách quyền riêng tư – Daily Stylist</title>
+<meta name="description" content="Chính sách quyền riêng tư của ứng dụng Daily Stylist: dữ liệu chỉ lưu trên điện thoại, không tài khoản, không quảng cáo. Privacy Policy of the Daily Stylist app.">
+<meta name="legal-version" content="2026-10-05.2">
+<meta name="legal-source-sha256" content="0e285b9cbb75eb1b41e5e2f00ddf8fbc436dc67bf9756061b24b264f9c6eea6d">
+<!--
+  FILE TỰ SINH, ĐỪNG SỬA TAY. Nguồn: app/src/content/legal.ts + app/src/lib/contact.ts. Sinh lại: trong thư mục app chạy "npm run legal:html".
+  - Văn bản do AI soạn, cần luật sư (hoặc người có chuyên môn pháp lý tại Việt Nam) xem lại trước khi phát hành chính thức.
+  - Họ tên, email, URL lấy từ app/src/lib/contact.ts. Kiểm tra đã điền đủ: RELEASE_CHECK=1 npx jest release-config.
+  - Trang không tải gì từ bên ngoài (không web font, không script) để chính trang này cũng không gửi dữ liệu đi đâu.
+  - Đăng công khai tại: https://whitecomet-studio.github.io/daily-stylist/privacy.html (không PDF, không chặn theo quốc gia). Xem docs/release/README.md.
+-->
+<style>
+  :root {
+    color-scheme: light dark;
+    --paper: #FAF8F5;
+    --surface: #FFFFFF;
+    --sand: #EDE7DF;
+    --ink: #141414;
+    --ink-soft: #3A3835;
+    --muted: #6E675E;
+    --line: #E2DCD3;
+    --accent: #8B6F47;
+    --accent-soft: #F1E9DD;
+    /* Không dùng Georgia: font này thiếu nhiều chữ tiếng Việt có dấu chồng (ề, ắ...) trên Windows. */
+    --serif: "Playfair Display", "Noto Serif", Cambria, "Times New Roman", serif;
+    --sans: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #141311;
+      --surface: #1C1A17;
+      --sand: #26231F;
+      --ink: #F3EFE8;
+      --ink-soft: #D8D2C8;
+      --muted: #A39B8F;
+      --line: #35312B;
+      --accent: #C9A878;
+      --accent-soft: #2A241C;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink-soft);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+  .brand {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 12px;
+  }
+  h1, h2, h3 { color: var(--ink); font-weight: 500; }
+  h1 { font-family: var(--serif); font-size: 30px; line-height: 1.25; margin: 0 0 12px; }
+  h2 { font-family: var(--serif); font-size: 21px; line-height: 1.35; margin: 36px 0 10px; }
+  section, article { scroll-margin-top: 16px; }
+  p { margin: 0 0 12px; }
+  ul { margin: 0 0 12px; padding-left: 22px; }
+  li { margin: 0 0 6px; }
+  a { color: var(--accent); text-underline-offset: 2px; word-break: break-word; }
+  strong { color: var(--ink); font-weight: 600; }
+  .meta { font-size: 14px; color: var(--muted); margin: 0 0 20px; }
+  .lang-nav { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 24px; }
+  .lang-nav a {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px;
+    border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+    color: var(--ink); text-decoration: none; font-size: 14px;
+  }
+  .lang-nav a[aria-current="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+  .note { font-size: 14px; color: var(--muted); }
+  .summary {
+    background: var(--accent-soft); border: 1px solid var(--line); border-radius: 16px;
+    padding: 18px 18px 8px; margin: 0 0 20px;
+  }
+  .summary h2 { margin-top: 0; font-size: 18px; }
+  .summary ul { padding-left: 20px; }
+  .toc {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px 6px; margin: 0 0 8px;
+  }
+  .toc-title {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px;
+  }
+  .toc ul { list-style: none; padding: 0; margin: 0; }
+  .toc li { margin: 0; }
+  .toc a {
+    display: flex; align-items: center; min-height: 40px; padding: 4px 0;
+    color: var(--ink); text-decoration: none; border-top: 1px solid var(--line);
+  }
+  .toc li:first-child a { border-top: 0; }
+  .divider { border: 0; border-top: 1px solid var(--line); margin: 56px 0 40px; }
+  footer { margin-top: 48px; font-size: 13px; color: var(--muted); }
+  footer p { margin: 0 0 6px; }
+  @media (min-width: 600px) {
+    .wrap { padding: 56px 24px 80px; }
+    h1 { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<!-- ===================== TIẾNG VIỆT ===================== -->
+<article id="vi" lang="vi">
+  <p class="brand">Daily Stylist</p>
+  <h1>Chính sách quyền riêng tư</h1>
+  <p class="meta">Có hiệu lực từ 05/10/2026 · Phiên bản 2026-10-05.2</p>
+
+  <nav class="lang-nav" aria-label="Ngôn ngữ / Language">
+    <a href="#vi" aria-current="true">Tiếng Việt</a>
+    <a href="#en" hreflang="en">English version</a>
+  </nav>
+
+  <section class="summary" aria-labelledby="vi-summary">
+    <h2 id="vi-summary">Tóm tắt nhanh</h2>
+    <ul>
+      <li><strong>Không cần tài khoản.</strong> App không hỏi tên, email hay số điện thoại của bạn.</li>
+      <li><strong>Dữ liệu ở trên điện thoại của bạn.</strong> Ảnh quần áo, nhãn, lịch sử mặc, đánh giá và cài đặt chỉ lưu trên máy. Chúng tôi không có máy chủ lưu dữ liệu của bạn và không xem được dữ liệu đó.</li>
+      <li><strong>Tách nền ảnh ngay trên máy (Android).</strong> Ảnh của bạn không được tải lên đâu cả, kể cả máy chủ của Google. Riêng công cụ tách nền ML Kit của Google có gửi cho Google một số <strong>số liệu kỹ thuật</strong> (như đời máy, thời gian xử lý, mã lỗi) và <strong>mã định danh</strong>, không kèm ảnh. Bạn tắt được tính năng này trong Cài đặt của app (mục 3).</li>
+      <li><strong>Không quảng cáo, không bán hay chia sẻ dữ liệu.</strong> App không cài công cụ phân tích hay theo dõi nào, ngoài phần số liệu kỹ thuật của ML Kit nói trên.</li>
+      <li><strong>Thời tiết:</strong> app chỉ gửi tọa độ trung tâm thành phố bạn tự chọn tới Open-Meteo. App không dùng GPS.</li>
+      <li><strong>Chỉ xin quyền khi cần,</strong> và luôn giải thích trước khi hỏi.</li>
+      <li><strong>Bạn tự xóa được toàn bộ dữ liệu</strong> bất cứ lúc nào trong phần Cài đặt của app.</li>
+    </ul>
+  </section>
+
+  <nav class="toc" aria-labelledby="vi-toc">
+    <p class="toc-title" id="vi-toc">Mục lục</p>
+    <ul>
+      <li><a href="#vi-1">1. Về chính sách này</a></li>
+      <li><a href="#vi-2">2. Dữ liệu app lưu trên điện thoại của bạn</a></li>
+      <li><a href="#vi-3">3. Tách nền ảnh ngay trên điện thoại (Android)</a></li>
+      <li><a href="#vi-4">4. Kết nối tới dịch vụ thời tiết Open-Meteo</a></li>
+      <li><a href="#vi-5">5. Những điều app không làm</a></li>
+      <li><a href="#vi-6">6. Quyền truy cập trên điện thoại</a></li>
+      <li><a href="#vi-7">7. Ảnh có người</a></li>
+      <li><a href="#vi-8">8. Độ tuổi</a></li>
+      <li><a href="#vi-9">9. Ghi nhận việc bạn đồng ý</a></li>
+      <li><a href="#vi-10">10. Lưu giữ, sao lưu và xóa dữ liệu</a></li>
+      <li><a href="#vi-11">11. Bảo mật</a></li>
+      <li><a href="#vi-12">12. Quyền của bạn</a></li>
+      <li><a href="#vi-13">13. Khi bạn liên hệ với chúng tôi</a></li>
+      <li><a href="#vi-14">14. Liên kết và dịch vụ bên ngoài</a></li>
+      <li><a href="#vi-15">15. Thay đổi chính sách</a></li>
+      <li><a href="#vi-16">16. Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <section id="vi-1">
+    <h2>1. Về chính sách này</h2>
+    <p>Chính sách này giải thích cách ứng dụng Daily Stylist (“app”) xử lý dữ liệu. App do <strong>Nguyễn Công Tài (White Comet Studio)</strong> phát triển và phát hành với tư cách cá nhân tại Việt Nam (gọi là “chúng tôi”). Chính sách áp dụng cho app Daily Stylist trên Android được phát hành qua Google Play, và đi cùng Điều khoản sử dụng của app.</p>
+  </section>
+
+  <section id="vi-2">
+    <h2>2. Dữ liệu app lưu trên điện thoại của bạn</h2>
+    <p>Để app hoạt động, app lưu những dữ liệu sau trong vùng lưu trữ riêng của app trên điện thoại:</p>
+    <ul>
+      <li><strong>Ảnh quần áo</strong> bạn chụp bằng camera hoặc chọn từ máy. App lưu một bản sao đã thu nhỏ: bản đã tách nền hoặc ảnh gốc, tùy bạn chọn (xem mục 3), và có thể do bạn cắt lại. App không giữ thông tin đi kèm ảnh gốc (như vị trí chụp, thời gian chụp, loại máy). Ảnh gốc trong thư viện của bạn không bị thay đổi.</li>
+      <li><strong>Thông tin bạn nhập cho từng món:</strong> loại đồ, kiểu (có thể tự gõ), màu, độ dày, đánh dấu yêu thích.</li>
+      <li><strong>Lịch sử mặc và đánh giá:</strong> những bộ bạn đã chọn mặc theo ngày, và việc bạn thích hay không thích một gợi ý.</li>
+      <li><strong>Cài đặt:</strong> thành phố bạn chọn, bật hoặc tắt thời tiết, bật hoặc tắt tự động tách nền, bạn đã xem phần giới thiệu hay chưa, thời điểm bạn xác nhận đủ 18 tuổi, phiên bản Điều khoản sử dụng và Chính sách quyền riêng tư bạn đã đồng ý cùng thời điểm đồng ý (xem mục 9).</li>
+      <li><strong>Bản dự báo thời tiết gần nhất,</strong> để app vẫn hiển thị khi mất mạng.</li>
+    </ul>
+    <p>Những dữ liệu này <strong>không được gửi cho chúng tôi hay bất kỳ ai</strong>. Việc tách nền ảnh, gợi ý trang phục và thống kê được tính hoàn toàn trên điện thoại. Vì không lưu dữ liệu của bạn trên máy chủ, chúng tôi không thể xem, khôi phục hay xóa giúp bạn.</p>
+    <p>Gợi ý: đừng gõ thông tin cá nhân của bạn hoặc của người khác vào các ô nhập chữ.</p>
+  </section>
+
+  <section id="vi-3">
+    <h2>3. Tách nền ảnh ngay trên điện thoại (Android)</h2>
+    <p>Trên điện thoại Android, khi bạn thêm ảnh và tính năng <strong>Tự động tách nền</strong> đang bật (mặc định bật), app tự tách món đồ khỏi phông nền và cắt sát quanh món đồ, để ảnh trong tủ đồ gọn gàng, dễ nhìn. Gợi ý phối đồ không đọc ảnh mà dựa vào nhãn bạn chọn cho từng món (loại, màu, độ dày).</p>
+    <p>Việc này chạy <strong>ngay trên điện thoại</strong> bằng công cụ ML Kit của Google, thông qua Google Play services có sẵn trên máy. <strong>Ảnh của bạn không được tải lên</strong> máy chủ nào, kể cả của chúng tôi hay của Google: theo điều khoản của ML Kit, ảnh đầu vào và kết quả xử lý không được gửi về Google.</p>
+    <p>Để tính năng chạy được, Google Play services tải bộ mô hình nhận diện về máy (thường ngay sau khi bạn cài app từ Google Play, có thể trước cả khi bạn mở app lần đầu, hoặc ở lần đầu dùng) và tự cập nhật bộ mô hình này. Khi chưa tải xong, bước tách nền có thể chưa chạy được.</p>
+    <p>Theo tài liệu của Google, ML Kit gửi cho Google <strong>số liệu kỹ thuật</strong> về hoạt động của chính công cụ này: thông tin thiết bị (hãng, đời máy, phiên bản Android), tên gói và phiên bản app, các mã định danh (có thể gồm mã định danh thiết bị và mã theo lượt cài đặt), chỉ số hiệu năng (như thời gian xử lý), cấu hình và kích thước dữ liệu xử lý, phiên bản tính năng, loại sự kiện (như khởi tạo, tải mô hình, nhận diện) và mã lỗi. Dữ liệu được mã hóa khi truyền (HTTPS) và theo Google thì không được chuyển cho bên thứ ba. Google dùng dữ liệu này để đo hiệu năng, sửa lỗi, duy trì và cải thiện ML Kit, và phát hiện lạm dụng, theo Chính sách quyền riêng tư của Google (<a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>). Chúng tôi không nhận được, không xem được và không kiểm soát dữ liệu này. Chi tiết: <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">https://developers.google.com/ml-kit/android-data-disclosure</a></p>
+    <p><strong>Bạn có thể tắt tính năng này</strong> trong Cài đặt của app › Tự động tách nền. Khi tắt, app không dùng ML Kit: ảnh mới thêm được giữ nguyên (đã thu nhỏ) và bạn có thể tự cắt ảnh. Bạn bật lại được bất cứ lúc nào. Việc tắt không ảnh hưởng tới số liệu đã gửi trước đó, do Google lưu giữ (mục 10).</p>
+    <p>Khi tính năng đang bật, trên màn thêm đồ bạn vẫn có thể bấm “Bỏ qua” hoặc chọn lưu “Ảnh gốc” thay cho bản đã tách nền, và luôn có thể tự cắt ảnh. Google không cung cấp cách tắt riêng việc gửi số liệu kỹ thuật của ML Kit khi vẫn dùng tách nền.</p>
+    <p>Nếu máy của bạn không chạy được bước tách nền (ví dụ máy không có Google Play services), app vẫn lưu ảnh đã thu nhỏ như bình thường và bạn có thể tự cắt ảnh.</p>
+  </section>
+
+  <section id="vi-4">
+    <h2>4. Kết nối tới dịch vụ thời tiết Open-Meteo</h2>
+    <p>Ngoài phần ML Kit ở mục 3, app chỉ kết nối mạng để lấy thời tiết. Khi tính năng thời tiết đang bật và bạn đã chọn thành phố, app kết nối tới dịch vụ thời tiết <strong>Open-Meteo</strong> (api.open-meteo.com) qua kết nối mã hóa HTTPS. Mỗi lần lấy dự báo, app gửi:</p>
+    <ul>
+      <li>tọa độ trung tâm của thành phố bạn đã chọn trong danh sách của app. Đây không phải vị trí thật của bạn: app không xin quyền vị trí và không dùng GPS;</li>
+      <li>các thông số dự báo cần lấy (ví dụ nhiệt độ, khả năng mưa) và múi giờ.</li>
+    </ul>
+    <p>Yêu cầu thời tiết <strong>không</strong> kèm ảnh, thông tin tủ đồ, lịch sử mặc, mã định danh thiết bị hay bất kỳ thông tin nào giúp nhận ra bạn.</p>
+    <p>Giống mọi kết nối internet, máy chủ của Open-Meteo nhận được địa chỉ IP của bạn và một số thông tin kỹ thuật của kết nối. Theo điều khoản của Open-Meteo, họ có thể lưu nhật ký máy chủ (có thể gồm địa chỉ IP và tọa độ được hỏi) vì lý do kỹ thuật và xóa sau 90 ngày. Việc này do Open-Meteo thực hiện theo điều khoản của họ: <a href="https://open-meteo.com/en/terms" rel="noopener">https://open-meteo.com/en/terms</a></p>
+    <p>Bạn có thể tắt thời tiết trong Cài đặt của app. Khi đó app ngừng gửi yêu cầu thời tiết.</p>
+  </section>
+
+  <section id="vi-5">
+    <h2>5. Những điều app không làm</h2>
+    <ul>
+      <li>Không có tài khoản, không đăng nhập.</li>
+      <li>Không tải ảnh của bạn lên máy chủ nào.</li>
+      <li>Không hiển thị quảng cáo, không dùng mã quảng cáo (Advertising ID).</li>
+      <li>Không cài công cụ phân tích, theo dõi hay báo lỗi tự động của bên thứ ba. Ngoại lệ duy nhất là số liệu kỹ thuật và mã định danh mà ML Kit tự gửi cho Google khi tách nền ảnh; bạn tắt được tính năng này (mục 3).</li>
+      <li>Không xin quyền vị trí, micro hay danh bạ.</li>
+      <li>Không đọc toàn bộ thư viện ảnh của bạn.</li>
+      <li>Không bán, cho thuê hay chia sẻ dữ liệu của bạn.</li>
+    </ul>
+  </section>
+
+  <section id="vi-6">
+    <h2>6. Quyền truy cập trên điện thoại</h2>
+    <p>App <strong>chỉ xin quyền khi bạn dùng tới tính năng cần quyền đó</strong>, và luôn giải thích trong app (cần quyền để làm gì) trước khi Android hiện hộp thoại hỏi. Bạn có thể từ chối mà vẫn dùng được các phần khác của app, và xem lại các quyền ở mục “Quyền của ứng dụng” trong Cài đặt của app.</p>
+    <ul>
+      <li><strong>Camera:</strong> quyền duy nhất app cần hỏi bạn, chỉ dùng khi bạn bấm chụp ảnh món đồ. Nếu từ chối, bạn vẫn thêm đồ được bằng ảnh có sẵn. Bạn có thể thu hồi quyền này trong Cài đặt của Android bất cứ lúc nào.</li>
+      <li><strong>Ảnh:</strong> app dùng trình chọn ảnh của hệ thống Android, chỉ nhận đúng những ảnh bạn chọn và không xem được các ảnh khác.</li>
+      <li><strong>Internet:</strong> để lấy dự báo thời tiết (mục 4). Khi tự động tách nền đang bật, ML Kit cũng dùng kết nối mạng để gửi số liệu kỹ thuật và mã định danh cho Google (mục 3). Android cấp sẵn quyền này khi cài app, không hiện hộp thoại hỏi.</li>
+    </ul>
+  </section>
+
+  <section id="vi-7">
+    <h2>7. Ảnh có người</h2>
+    <p>Daily Stylist dành cho ảnh quần áo. Vui lòng chụp riêng món đồ (trải phẳng hoặc treo trên móc), <strong>không chụp người</strong>, kể cả chính bạn, và đừng để lọt khuôn mặt, ảnh phản chiếu trong gương, giấy tờ hay thông tin cá nhân vào khung hình. Nếu lỡ lưu ảnh có người, hãy xóa món đồ đó trong app.</p>
+  </section>
+
+  <section id="vi-8">
+    <h2>8. Độ tuổi</h2>
+    <p>App chỉ dành cho người <strong>từ 18 tuổi trở lên</strong>. Khi bắt đầu, app yêu cầu bạn xác nhận mình đủ 18 tuổi. Chúng tôi không cố ý xử lý dữ liệu của trẻ em. Nếu người dưới 18 tuổi đã dùng app, có thể xóa toàn bộ dữ liệu trong Cài đặt của app hoặc gỡ app.</p>
+  </section>
+
+  <section id="vi-9">
+    <h2>9. Ghi nhận việc bạn đồng ý</h2>
+    <p>Khi bạn đồng ý với Điều khoản sử dụng và Chính sách quyền riêng tư, app lưu <strong>trên điện thoại</strong> phiên bản của hai văn bản bạn đã đồng ý và thời điểm đồng ý, cùng thời điểm bạn xác nhận đủ 18 tuổi.</p>
+    <p>App dùng thông tin này để biết khi nào cần hỏi lại bạn sau khi văn bản thay đổi. Thông tin này không được gửi cho chúng tôi. Bạn xem ngày đã đồng ý trong Cài đặt của app. Khi bạn xóa toàn bộ dữ liệu, thông tin này cũng bị xóa và app sẽ hỏi lại từ đầu.</p>
+  </section>
+
+  <section id="vi-10">
+    <h2>10. Lưu giữ, sao lưu và xóa dữ liệu</h2>
+    <ul>
+      <li>Dữ liệu được giữ trên điện thoại cho tới khi bạn xóa.</li>
+      <li><strong>Xóa một món đồ:</strong> ảnh và thông tin của món đó bị xóa khỏi app.</li>
+      <li><strong>Xóa toàn bộ:</strong> mục “Xóa toàn bộ dữ liệu” trong Cài đặt của app xóa ảnh, nhãn, lịch sử mặc, đánh giá và cài đặt (gồm cả ghi nhận đồng ý); app quay về màn hình giới thiệu. Thao tác này không hoàn tác được.</li>
+      <li><strong>Gỡ app</strong> cũng xóa dữ liệu của app trên điện thoại.</li>
+      <li><strong>Sao lưu:</strong> app tắt tính năng sao lưu tự động dữ liệu app lên tài khoản Google của Android. Vì vậy, nếu bạn đổi điện thoại, gỡ app hoặc mất máy, dữ liệu có thể mất và chúng tôi không khôi phục được. Lưu ý: trên một số điện thoại, khi bạn chủ động chuyển dữ liệu trực tiếp từ máy cũ sang máy mới, dữ liệu của app vẫn có thể được chuyển theo. Đây là cách Android hoạt động và phụ thuộc vào hãng sản xuất.</li>
+      <li>Nhật ký máy chủ tại Open-Meteo: xem mục 4.</li>
+      <li>Số liệu kỹ thuật của ML Kit do Google lưu giữ theo chính sách của Google (mục 3); chúng tôi không giữ bản nào và không xóa hộ được.</li>
+    </ul>
+  </section>
+
+  <section id="vi-11">
+    <h2>11. Bảo mật</h2>
+    <p>Dữ liệu nằm trong vùng lưu trữ riêng của app; các app khác thông thường không truy cập được. Kết nối lấy thời tiết dùng HTTPS. App không mã hóa thêm dữ liệu trên máy, nên mức an toàn còn phụ thuộc vào điện thoại của bạn: hãy đặt khóa màn hình và cập nhật hệ điều hành. Không hệ thống nào an toàn tuyệt đối. Nếu bạn phát hiện vấn đề bảo mật, vui lòng báo cho chúng tôi qua email ở mục 16.</p>
+  </section>
+
+  <section id="vi-12">
+    <h2>12. Quyền của bạn</h2>
+    <p>Theo pháp luật Việt Nam về bảo vệ dữ liệu cá nhân, trong đó có Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15, bạn có các quyền như được biết, đồng ý hoặc rút lại đồng ý, xem, chỉnh sửa và yêu cầu xóa dữ liệu cá nhân của mình.</p>
+    <p>Vì dữ liệu nằm trên điện thoại của bạn, bạn có thể tự thực hiện ngay trong app: xem và sửa từng món đồ, xóa từng món hoặc xóa toàn bộ.</p>
+    <p>Bạn rút lại được đồng ý cho từng việc gửi dữ liệu ra khỏi máy, ngay trong Cài đặt của app: tắt <strong>Gợi ý theo thời tiết</strong> để app ngừng gửi tọa độ thành phố cho Open-Meteo (mục 4), và tắt <strong>Tự động tách nền</strong> để app ngừng dùng ML Kit (mục 3). Việc rút lại đồng ý không ảnh hưởng tới việc xử lý đã diễn ra trước đó. Để rút lại toàn bộ đồng ý, bạn ngừng dùng app, xóa toàn bộ dữ liệu và gỡ app. Nếu bạn có câu hỏi hoặc yêu cầu khác, hãy liên hệ chúng tôi.</p>
+  </section>
+
+  <section id="vi-13">
+    <h2>13. Khi bạn liên hệ với chúng tôi</h2>
+    <p>Nếu bạn gửi email, chúng tôi nhận địa chỉ email và nội dung thư của bạn. Chúng tôi chỉ dùng thông tin này để trả lời và xử lý yêu cầu của bạn, không chia sẻ cho bên khác. Thư được lưu trong hộp thư của chúng tôi tại nhà cung cấp dịch vụ email, và được xóa không quá 12 tháng sau khi xử lý xong, hoặc sớm hơn nếu bạn yêu cầu.</p>
+  </section>
+
+  <section id="vi-14">
+    <h2>14. Liên kết và dịch vụ bên ngoài</h2>
+    <p>Khi bạn mở trang của Open-Meteo hoặc bản web của chính sách này từ app, trang được mở bằng trình duyệt và trang web đó xử lý dữ liệu theo chính sách riêng của họ.</p>
+    <p>Google Play, Google Play services và Android có thể thu thập một số dữ liệu theo chính sách của Google, ví dụ thống kê lượt cài, dữ liệu chẩn đoán của ML Kit (mục 3) hoặc báo cáo sự cố nếu bạn đã cho phép điện thoại chia sẻ dữ liệu chẩn đoán. Phần này nằm ngoài app và không do chúng tôi kiểm soát.</p>
+  </section>
+
+  <section id="vi-15">
+    <h2>15. Thay đổi chính sách</h2>
+    <p>Khi app thay đổi cách xử lý dữ liệu, chúng tôi sẽ cập nhật chính sách này, phiên bản và ngày hiệu lực trước khi phát hành phiên bản app mới.</p>
+    <p>Khi chính sách thay đổi, app sẽ <strong>thông báo và hỏi bạn đồng ý lại</strong> ngay trong app trước khi bạn tiếp tục dùng. Thay đổi quan trọng cũng được nêu trong ghi chú cập nhật (“Có gì mới”) của app trên Google Play.</p>
+  </section>
+
+  <section id="vi-16">
+    <h2>16. Liên hệ</h2>
+    <ul>
+      <li>Người phát triển: <strong>Nguyễn Công Tài (White Comet Studio)</strong></li>
+      <li>Email: <a href="mailto:studio.whitecomet@gmail.com">studio.whitecomet@gmail.com</a></li>
+      <li>Bản web của chính sách này: <a href="https://whitecomet-studio.github.io/daily-stylist/privacy.html" rel="noopener">https://whitecomet-studio.github.io/daily-stylist/privacy.html</a></li>
+    </ul>
+  </section>
+</article>
+
+<hr class="divider">
+
+<!-- ===================== ENGLISH ===================== -->
+<article id="en" lang="en">
+  <p class="brand">Daily Stylist</p>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Effective from 5 October 2026 · Version 2026-10-05.2</p>
+
+  <nav class="lang-nav" aria-label="Language / Ngôn ngữ">
+    <a href="#vi" hreflang="vi">Tiếng Việt</a>
+    <a href="#en" aria-current="true">English</a>
+  </nav>
+
+  <p class="note">This is a translation of the Vietnamese version. If the two versions differ, the Vietnamese version prevails.</p>
+
+  <section class="summary" aria-labelledby="en-summary">
+    <h2 id="en-summary">At a glance</h2>
+    <ul>
+      <li><strong>No account needed.</strong> The app does not ask for your name, email or phone number.</li>
+      <li><strong>Your data stays on your phone.</strong> Clothing photos, tags, wear history, ratings and settings are stored only on your device. We run no server that stores your data, and we cannot see it.</li>
+      <li><strong>Background removal runs on your phone (Android).</strong> Your photos are not uploaded anywhere, including Google’s servers. Google’s ML Kit background removal tool does send Google some <strong>technical metrics</strong> (such as device model, processing time and error codes) and <strong>identifiers</strong>, without your photos. You can turn this feature off in the app’s Settings (section 3).</li>
+      <li><strong>No ads, no selling or sharing of your data.</strong> The app includes no analytics or tracking tools, apart from the ML Kit technical metrics mentioned above.</li>
+      <li><strong>Weather:</strong> the app only sends the center coordinates of the city you picked to Open-Meteo. The app does not use GPS.</li>
+      <li><strong>Permissions are requested only when needed,</strong> always with an explanation first.</li>
+      <li><strong>You can delete all your data</strong> at any time in the app’s Settings.</li>
+    </ul>
+  </section>
+
+  <nav class="toc" aria-labelledby="en-toc">
+    <p class="toc-title" id="en-toc">Contents</p>
+    <ul>
+      <li><a href="#en-1">1. About this policy</a></li>
+      <li><a href="#en-2">2. Data the app stores on your phone</a></li>
+      <li><a href="#en-3">3. On-device background removal (Android)</a></li>
+      <li><a href="#en-4">4. Connection to the Open-Meteo weather service</a></li>
+      <li><a href="#en-5">5. What the app does not do</a></li>
+      <li><a href="#en-6">6. Device permissions</a></li>
+      <li><a href="#en-7">7. Photos of people</a></li>
+      <li><a href="#en-8">8. Age</a></li>
+      <li><a href="#en-9">9. Record of your consent</a></li>
+      <li><a href="#en-10">10. Retention, backup and deletion</a></li>
+      <li><a href="#en-11">11. Security</a></li>
+      <li><a href="#en-12">12. Your rights</a></li>
+      <li><a href="#en-13">13. When you contact us</a></li>
+      <li><a href="#en-14">14. External links and services</a></li>
+      <li><a href="#en-15">15. Changes to this policy</a></li>
+      <li><a href="#en-16">16. Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="en-1">
+    <h2>1. About this policy</h2>
+    <p>This policy explains how the Daily Stylist application (“the app”) handles data. The app is developed and published by <strong>Nguyễn Công Tài (White Comet Studio)</strong> as an individual based in Vietnam (“we”, “us”). It applies to the Daily Stylist app for Android distributed through Google Play, and goes together with the app’s Terms of Service.</p>
+  </section>
+
+  <section id="en-2">
+    <h2>2. Data the app stores on your phone</h2>
+    <p>To work, the app stores the following in its private app storage on your phone:</p>
+    <ul>
+      <li><strong>Clothing photos</strong> you take with the camera or pick from your device. The app keeps a resized copy: the background-removed version or the original photo, whichever you choose (see section 3), possibly cropped by you. The app does not keep the information attached to the original photo (such as capture location, capture time or device model). The original photo in your gallery is not changed.</li>
+      <li><strong>Details you enter for each item:</strong> category, type (which you can type yourself), color, warmth and favorite mark.</li>
+      <li><strong>Wear history and ratings:</strong> the outfits you chose to wear on each day, and whether you liked or disliked a suggestion.</li>
+      <li><strong>Settings:</strong> your chosen city, weather on or off, automatic background removal on or off, whether you have seen the introduction, the time you confirmed you are 18 or older, and the versions of the Terms of Service and Privacy Policy you accepted with the time you accepted them (see section 9).</li>
+      <li><strong>The latest weather forecast,</strong> so the app can still show it when you are offline.</li>
+    </ul>
+    <p>This data is <strong>not sent to us or anyone else</strong>. Background removal, outfit suggestions and statistics are computed entirely on your phone. Because we do not store your data on any server, we cannot view, restore or delete it for you.</p>
+    <p>Tip: please do not type personal information about yourself or others into text fields.</p>
+  </section>
+
+  <section id="en-3">
+    <h2>3. On-device background removal (Android)</h2>
+    <p>On Android phones, when you add a photo and <strong>automatic background removal</strong> is on (it is on by default), the app separates the item from the background and crops closely around it, so your wardrobe looks tidy and easy to browse. Outfit suggestions do not read the photos; they are based on the tags you choose for each item (category, color, warmth).</p>
+    <p>This runs <strong>on your phone</strong> using Google’s ML Kit, through the Google Play services already on the device. <strong>Your photos are not uploaded</strong> to any server, ours or Google’s: under ML Kit’s terms, input images and processing results are not sent to Google.</p>
+    <p>For the feature to work, Google Play services downloads the recognition model to your phone (usually right after you install the app from Google Play, possibly before you first open it, or on first use) and keeps it updated. Until the download has finished, background removal may not work yet.</p>
+    <p>According to Google’s documentation, ML Kit sends Google <strong>technical metrics</strong> about how the tool itself is working: device information (manufacturer, model, Android version), the app’s package name and version, identifiers (which may include a device identifier and per-installation identifiers), performance metrics (such as processing time), configuration and input/output size, feature version, event types (such as initialization, model download, detection) and error codes. The data is encrypted in transit (HTTPS) and, according to Google, is not transferred to third parties. Google uses it to measure performance, debug, maintain and improve ML Kit, and detect misuse or abuse, under Google’s Privacy Policy (<a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>). We do not receive, see or control this data. Details: <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">https://developers.google.com/ml-kit/android-data-disclosure</a></p>
+    <p><strong>You can turn this feature off</strong> in the app’s Settings › “Tự động tách nền” (Automatic background removal). When it is off, the app does not use ML Kit: new photos are kept as they are (resized) and you can crop them yourself. You can turn it back on at any time. Turning it off does not affect metrics already sent, which Google keeps (section 10).</p>
+    <p>While the feature is on, you can still tap “Bỏ qua” (Skip) on the add-item screen or choose to save “Ảnh gốc” (the original photo) instead of the background-removed version, and you can always crop the photo yourself. Google offers no separate way to turn off ML Kit’s technical metrics while still using background removal.</p>
+    <p>If background removal cannot run on your phone (for example, a phone without Google Play services), the app still saves the resized photo as usual and you can crop it yourself.</p>
+  </section>
+
+  <section id="en-4">
+    <h2>4. Connection to the Open-Meteo weather service</h2>
+    <p>Apart from ML Kit as described in section 3, the app connects to the internet only to fetch the weather. When the weather feature is on and you have picked a city, the app connects to the <strong>Open-Meteo</strong> weather service (api.open-meteo.com) over an encrypted HTTPS connection. Each forecast request contains:</p>
+    <ul>
+      <li>the center coordinates of the city you picked from the app’s list. This is not your actual location: the app does not request location permission and does not use GPS;</li>
+      <li>the forecast values requested (for example temperature and chance of rain) and the time zone.</li>
+    </ul>
+    <p>Weather requests do <strong>not</strong> include your photos, wardrobe details, wear history, device identifiers or anything else that identifies you.</p>
+    <p>As with any internet connection, Open-Meteo’s servers receive your IP address and some technical connection information. According to Open-Meteo’s terms, they may keep server logs (which may include IP addresses and the requested coordinates) for technical reasons and delete them after 90 days. This is done by Open-Meteo under its own terms: <a href="https://open-meteo.com/en/terms" rel="noopener">https://open-meteo.com/en/terms</a></p>
+    <p>You can turn weather off in the app’s Settings. The app then stops sending weather requests.</p>
+  </section>
+
+  <section id="en-5">
+    <h2>5. What the app does not do</h2>
+    <ul>
+      <li>No accounts, no sign-in.</li>
+      <li>No uploading of your photos to any server.</li>
+      <li>No ads, and no use of the Advertising ID.</li>
+      <li>No third-party analytics, tracking or automatic crash-reporting tools. The only exception is the technical metrics and identifiers ML Kit itself sends Google when removing photo backgrounds; you can turn this feature off (section 3).</li>
+      <li>No location, microphone or contacts permission.</li>
+      <li>No access to your whole photo library.</li>
+      <li>No selling, renting or sharing of your data.</li>
+    </ul>
+  </section>
+
+  <section id="en-6">
+    <h2>6. Device permissions</h2>
+    <p>The app <strong>asks for a permission only when you use a feature that needs it</strong>, and always explains in the app why it is needed before Android shows its prompt. You can decline and still use the rest of the app, and review the permissions under “Quyền của ứng dụng” (App permissions) in the app’s Settings.</p>
+    <ul>
+      <li><strong>Camera:</strong> the only permission the app needs to ask you for, used only when you tap to take a photo of an item. If you decline, you can still add items from existing photos. You can revoke this permission in Android settings at any time.</li>
+      <li><strong>Photos:</strong> the app uses the Android system photo picker, receives only the photos you select and cannot see any others.</li>
+      <li><strong>Internet:</strong> used to fetch the weather forecast (section 4). While automatic background removal is on, ML Kit also uses the connection to send technical metrics and identifiers to Google (section 3). Android grants it at install time without a prompt.</li>
+    </ul>
+  </section>
+
+  <section id="en-7">
+    <h2>7. Photos of people</h2>
+    <p>Daily Stylist is meant for photos of clothes. Please photograph the item on its own (laid flat or on a hanger) and <strong>do not photograph people</strong>, including yourself. Avoid faces, mirror reflections, documents or personal information in the frame. If you saved a photo that shows a person, please delete that item in the app.</p>
+  </section>
+
+  <section id="en-8">
+    <h2>8. Age</h2>
+    <p>The app is intended only for people <strong>aged 18 or older</strong>. When you start, the app asks you to confirm that you are 18 or older. We do not knowingly process children’s data. If someone under 18 has used the app, their data can be deleted in the app’s Settings or by uninstalling the app.</p>
+  </section>
+
+  <section id="en-9">
+    <h2>9. Record of your consent</h2>
+    <p>When you accept the Terms of Service and this Privacy Policy, the app stores <strong>on your phone</strong> the versions of both documents you accepted and the time you accepted them, together with the time you confirmed you are 18 or older.</p>
+    <p>The app uses this only to know when to ask you again after a document changes. It is not sent to us. You can see the date you accepted in the app’s Settings. Deleting all data also deletes this record, and the app will ask you again from the start.</p>
+  </section>
+
+  <section id="en-10">
+    <h2>10. Retention, backup and deletion</h2>
+    <ul>
+      <li>Data stays on your phone until you delete it.</li>
+      <li><strong>Delete one item:</strong> the item’s photo and details are removed from the app.</li>
+      <li><strong>Delete everything:</strong> “Xóa toàn bộ dữ liệu” (Delete all data) in the app’s Settings removes photos, tags, wear history, ratings and settings (including the consent record), and returns the app to its introduction screen. This cannot be undone.</li>
+      <li><strong>Uninstalling the app</strong> also deletes the app’s data on your phone.</li>
+      <li><strong>Backup:</strong> the app turns off Android’s automatic backup of app data to your Google account. If you change phones, uninstall the app or lose your phone, your data may be lost and we cannot restore it. Note: on some phones, when you directly transfer data from an old phone to a new one, the app’s data may still be transferred. This is Android behavior and depends on the device manufacturer.</li>
+      <li>Server logs at Open-Meteo: see section 4.</li>
+      <li>ML Kit technical metrics are kept by Google under Google’s policies (section 3); we hold no copy and cannot delete them for you.</li>
+    </ul>
+  </section>
+
+  <section id="en-11">
+    <h2>11. Security</h2>
+    <p>Data is kept in the app’s private storage, which other apps normally cannot access. The weather connection uses HTTPS. The app does not add its own encryption to data on the device, so security also depends on your phone: please use a screen lock and keep your system updated. No system is perfectly secure. If you find a security issue, please tell us at the email in section 16.</p>
+  </section>
+
+  <section id="en-12">
+    <h2>12. Your rights</h2>
+    <p>Under Vietnamese personal data protection law, including the Law on Personal Data Protection No. 91/2025/QH15, you have rights such as being informed, giving or withdrawing consent, accessing, correcting and requesting deletion of your personal data.</p>
+    <p>Because your data is on your phone, you can exercise these directly in the app: view and edit each item, delete individual items or delete everything.</p>
+    <p>You can withdraw consent for each kind of data that leaves the phone in the app’s Settings: turn off “Gợi ý theo thời tiết” (weather-based suggestions) so the app stops sending city coordinates to Open-Meteo (section 4), and turn off “Tự động tách nền” (automatic background removal) so the app stops using ML Kit (section 3). Withdrawing consent does not affect processing that took place before. To withdraw all consent, stop using the app, delete all data and uninstall it. For any other question or request, please contact us.</p>
+  </section>
+
+  <section id="en-13">
+    <h2>13. When you contact us</h2>
+    <p>If you email us, we receive your email address and the content of your message. We use it only to reply to and handle your request, and we do not share it with others. Messages are kept in our mailbox at our email provider and deleted no later than 12 months after your request is resolved, or sooner if you ask.</p>
+  </section>
+
+  <section id="en-14">
+    <h2>14. External links and services</h2>
+    <p>When you open Open-Meteo’s website or the web version of this policy from the app, the page opens in your browser and that website handles data under its own policy.</p>
+    <p>Google Play, Google Play services and Android may collect some data under Google’s policies, for example install statistics, ML Kit diagnostics (section 3) or crash reports if you allowed your phone to share diagnostic data. This happens outside the app and is not controlled by us.</p>
+  </section>
+
+  <section id="en-15">
+    <h2>15. Changes to this policy</h2>
+    <p>If the app changes how it handles data, we will update this policy, its version and its effective date before releasing the new version of the app.</p>
+    <p>When this policy changes, the app will <strong>tell you and ask you to agree again</strong> in the app before you continue using it. Important changes will also be mentioned in the app’s release notes (“What’s new”) on Google Play.</p>
+  </section>
+
+  <section id="en-16">
+    <h2>16. Contact</h2>
+    <ul>
+      <li>Developer: <strong>Nguyễn Công Tài (White Comet Studio)</strong></li>
+      <li>Email: <a href="mailto:studio.whitecomet@gmail.com">studio.whitecomet@gmail.com</a></li>
+      <li>Web version of this policy: <a href="https://whitecomet-studio.github.io/daily-stylist/privacy.html" rel="noopener">https://whitecomet-studio.github.io/daily-stylist/privacy.html</a></li>
+    </ul>
+  </section>
+</article>
+
+<footer>
+  <p>Daily Stylist · Chính sách quyền riêng tư / Privacy Policy · Phiên bản / Version 2026-10-05.2</p>
+  <p>Xem thêm / See also: <a href="https://whitecomet-studio.github.io/daily-stylist/terms.html">Điều khoản sử dụng / Terms of Service</a></p>
+</footer>
+
+</main>
+</body>
+</html>

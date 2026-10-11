@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Điều khoản sử dụng – Daily Stylist</title>
+<meta name="description" content="Điều khoản sử dụng ứng dụng Daily Stylist: app miễn phí cho người từ 18 tuổi, dữ liệu chỉ lưu trên điện thoại. Terms of Service of the Daily Stylist app.">
+<meta name="legal-version" content="2026-10-05">
+<meta name="legal-source-sha256" content="0e285b9cbb75eb1b41e5e2f00ddf8fbc436dc67bf9756061b24b264f9c6eea6d">
+<!--
+  FILE TỰ SINH, ĐỪNG SỬA TAY. Nguồn: app/src/content/legal.ts + app/src/lib/contact.ts. Sinh lại: trong thư mục app chạy "npm run legal:html".
+  - Văn bản do AI soạn, cần luật sư (hoặc người có chuyên môn pháp lý tại Việt Nam) xem lại trước khi phát hành chính thức.
+  - Họ tên, email, URL lấy từ app/src/lib/contact.ts. Kiểm tra đã điền đủ: RELEASE_CHECK=1 npx jest release-config.
+  - Trang không tải gì từ bên ngoài (không web font, không script) để chính trang này cũng không gửi dữ liệu đi đâu.
+  - Đăng công khai tại: https://whitecomet-studio.github.io/daily-stylist/terms.html (không PDF, không chặn theo quốc gia). Xem docs/release/README.md.
+-->
+<style>
+  :root {
+    color-scheme: light dark;
+    --paper: #FAF8F5;
+    --surface: #FFFFFF;
+    --sand: #EDE7DF;
+    --ink: #141414;
+    --ink-soft: #3A3835;
+    --muted: #6E675E;
+    --line: #E2DCD3;
+    --accent: #8B6F47;
+    --accent-soft: #F1E9DD;
+    /* Không dùng Georgia: font này thiếu nhiều chữ tiếng Việt có dấu chồng (ề, ắ...) trên Windows. */
+    --serif: "Playfair Display", "Noto Serif", Cambria, "Times New Roman", serif;
+    --sans: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #141311;
+      --surface: #1C1A17;
+      --sand: #26231F;
+      --ink: #F3EFE8;
+      --ink-soft: #D8D2C8;
+      --muted: #A39B8F;
+      --line: #35312B;
+      --accent: #C9A878;
+      --accent-soft: #2A241C;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink-soft);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+  .brand {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 12px;
+  }
+  h1, h2, h3 { color: var(--ink); font-weight: 500; }
+  h1 { font-family: var(--serif); font-size: 30px; line-height: 1.25; margin: 0 0 12px; }
+  h2 { font-family: var(--serif); font-size: 21px; line-height: 1.35; margin: 36px 0 10px; }
+  section, article { scroll-margin-top: 16px; }
+  p { margin: 0 0 12px; }
+  ul { margin: 0 0 12px; padding-left: 22px; }
+  li { margin: 0 0 6px; }
+  a { color: var(--accent); text-underline-offset: 2px; word-break: break-word; }
+  strong { color: var(--ink); font-weight: 600; }
+  .meta { font-size: 14px; color: var(--muted); margin: 0 0 20px; }
+  .lang-nav { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 24px; }
+  .lang-nav a {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px;
+    border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+    color: var(--ink); text-decoration: none; font-size: 14px;
+  }
+  .lang-nav a[aria-current="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+  .note { font-size: 14px; color: var(--muted); }
+  .summary {
+    background: var(--accent-soft); border: 1px solid var(--line); border-radius: 16px;
+    padding: 18px 18px 8px; margin: 0 0 20px;
+  }
+  .summary h2 { margin-top: 0; font-size: 18px; }
+  .summary ul { padding-left: 20px; }
+  .toc {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px 6px; margin: 0 0 8px;
+  }
+  .toc-title {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px;
+  }
+  .toc ul { list-style: none; padding: 0; margin: 0; }
+  .toc li { margin: 0; }
+  .toc a {
+    display: flex; align-items: center; min-height: 40px; padding: 4px 0;
+    color: var(--ink); text-decoration: none; border-top: 1px solid var(--line);
+  }
+  .toc li:first-child a { border-top: 0; }
+  .divider { border: 0; border-top: 1px solid var(--line); margin: 56px 0 40px; }
+  footer { margin-top: 48px; font-size: 13px; color: var(--muted); }
+  footer p { margin: 0 0 6px; }
+  @media (min-width: 600px) {
+    .wrap { padding: 56px 24px 80px; }
+    h1 { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<!-- ===================== TIẾNG VIỆT ===================== -->
+<article id="vi" lang="vi">
+  <p class="brand">Daily Stylist</p>
+  <h1>Điều khoản sử dụng</h1>
+  <p class="meta">Có hiệu lực từ 05/10/2026 · Phiên bản 2026-10-05</p>
+
+  <nav class="lang-nav" aria-label="Ngôn ngữ / Language">
+    <a href="#vi" aria-current="true">Tiếng Việt</a>
+    <a href="#en" hreflang="en">English version</a>
+  </nav>
+
+  <p class="note">Vui lòng đọc kỹ trước khi dùng app. Điều khoản này đi cùng Chính sách quyền riêng tư của app.</p>
+
+  <section class="summary" aria-labelledby="vi-summary">
+    <h2 id="vi-summary">Tóm tắt nhanh</h2>
+    <ul>
+      <li>Daily Stylist <strong>miễn phí</strong> và chỉ dành cho người <strong>từ 18 tuổi trở lên</strong>.</li>
+      <li>Gợi ý phối đồ và thời tiết <strong>chỉ để tham khảo</strong>. Bạn tự quyết định mặc gì.</li>
+      <li>Ảnh và dữ liệu <strong>thuộc về bạn và chỉ nằm trên máy của bạn</strong>. Không có sao lưu đám mây: gỡ app hoặc xóa dữ liệu là mất.</li>
+      <li>Chỉ chụp quần áo, <strong>không chụp người</strong>, không lưu nội dung vi phạm pháp luật.</li>
+      <li>Khi Điều khoản thay đổi, app sẽ báo và hỏi bạn đồng ý lại.</li>
+    </ul>
+  </section>
+
+  <nav class="toc" aria-labelledby="vi-toc">
+    <p class="toc-title" id="vi-toc">Mục lục</p>
+    <ul>
+      <li><a href="#vi-1">1. Chấp nhận điều khoản</a></li>
+      <li><a href="#vi-2">2. Độ tuổi</a></li>
+      <li><a href="#vi-3">3. Dịch vụ của app</a></li>
+      <li><a href="#vi-4">4. Nội dung của bạn</a></li>
+      <li><a href="#vi-5">5. Sử dụng app đúng mục đích</a></li>
+      <li><a href="#vi-6">6. Dữ liệu chỉ nằm trên máy của bạn</a></li>
+      <li><a href="#vi-7">7. Dịch vụ của bên thứ ba</a></li>
+      <li><a href="#vi-8">8. Sở hữu trí tuệ</a></li>
+      <li><a href="#vi-9">9. Miễn trừ trách nhiệm</a></li>
+      <li><a href="#vi-10">10. Giới hạn trách nhiệm</a></li>
+      <li><a href="#vi-11">11. Thay đổi điều khoản</a></li>
+      <li><a href="#vi-12">12. Chấm dứt</a></li>
+      <li><a href="#vi-13">13. Luật áp dụng và giải quyết tranh chấp</a></li>
+      <li><a href="#vi-14">14. Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <section id="vi-1">
+    <h2>1. Chấp nhận điều khoản</h2>
+    <p>Điều khoản sử dụng này (“Điều khoản”) là thỏa thuận giữa bạn và <strong>Nguyễn Công Tài (White Comet Studio)</strong>, cá nhân phát triển và phát hành ứng dụng Daily Stylist (“app”) tại Việt Nam (gọi là “chúng tôi”).</p>
+    <p>Khi đánh dấu ô đồng ý trong app và sử dụng app, bạn xác nhận đã đọc, hiểu và đồng ý với Điều khoản này và Chính sách quyền riêng tư của app. Chính sách quyền riêng tư giải thích cách app xử lý dữ liệu và là một phần đi kèm Điều khoản này.</p>
+    <p>Nếu không đồng ý, vui lòng không sử dụng app. Bạn có thể xóa toàn bộ dữ liệu trong Cài đặt của app rồi gỡ app.</p>
+  </section>
+
+  <section id="vi-2">
+    <h2>2. Độ tuổi</h2>
+    <p>App chỉ dành cho người <strong>từ 18 tuổi trở lên</strong>. Khi bắt đầu, app yêu cầu bạn xác nhận mình đủ 18 tuổi. Nếu bạn chưa đủ 18 tuổi, vui lòng không sử dụng app.</p>
+  </section>
+
+  <section id="vi-3">
+    <h2>3. Dịch vụ của app</h2>
+    <p>Daily Stylist là app <strong>miễn phí</strong> giúp bạn lưu ảnh quần áo mình có, gắn nhãn, ghi lại bộ đã mặc và nhận gợi ý phối đồ mỗi ngày từ chính tủ đồ của bạn, có xét tới thời tiết của thành phố bạn chọn.</p>
+    <p>Gợi ý được tạo tự động ngay trên điện thoại theo các quy tắc đơn giản (loại đồ, màu sắc, độ dày, thời tiết và lựa chọn trước đây của bạn). Gợi ý <strong>chỉ để tham khảo</strong>, có thể không hợp gu, hoàn cảnh hay thời tiết thực tế. Dự báo thời tiết có thể sai. Bạn tự quyết định trang phục của mình.</p>
+    <p>Trên Android, app có thể tự tách nền và cắt sát món đồ trong ảnh. Kết quả có thể không chính xác với mọi ảnh; bạn luôn có thể giữ ảnh gốc hoặc tự cắt ảnh.</p>
+    <p>App hiện không có quảng cáo và không bán gì trong app. Chúng tôi có thể thay đổi, thêm hoặc bỏ tính năng trong các bản cập nhật, và không cam kết app luôn hoạt động liên tục hay không có lỗi.</p>
+  </section>
+
+  <section id="vi-4">
+    <h2>4. Nội dung của bạn</h2>
+    <p>Ảnh và thông tin bạn thêm vào app (“nội dung của bạn”) <strong>thuộc về bạn</strong>. Nội dung này chỉ nằm trên điện thoại của bạn: chúng tôi không nhận, không xem và không có quyền gì đối với nó.</p>
+    <p>Bạn cam kết có quyền sử dụng những ảnh mình thêm vào app, ví dụ ảnh bạn tự chụp quần áo của mình.</p>
+    <p>Vui lòng <strong>không</strong> thêm vào app:</p>
+    <ul>
+      <li><strong>ảnh có người</strong>, kể cả chính bạn (khuôn mặt, cơ thể, ảnh phản chiếu trong gương), hoặc ảnh lộ giấy tờ, thông tin cá nhân;</li>
+      <li><strong>ảnh bạn không có quyền sử dụng</strong>, hoặc ảnh xâm phạm quyền riêng tư, quyền tác giả của người khác;</li>
+      <li><strong>nội dung vi phạm pháp luật Việt Nam</strong>, như nội dung khiêu dâm, bạo lực hoặc nội dung bị cấm khác.</li>
+    </ul>
+    <p>Bạn tự chịu trách nhiệm về nội dung mình lưu trong app.</p>
+  </section>
+
+  <section id="vi-5">
+    <h2>5. Sử dụng app đúng mục đích</h2>
+    <p>Bạn đồng ý dùng app cho mục đích cá nhân, phi thương mại và không dùng app để vi phạm pháp luật.</p>
+    <p>Trừ khi pháp luật cho phép, bạn không sao chép, sửa đổi, phân phối lại hay dịch ngược app, và không dùng app để gửi yêu cầu tự động hàng loạt tới dịch vụ thời tiết hoặc can thiệp vào dịch vụ của bên thứ ba.</p>
+  </section>
+
+  <section id="vi-6">
+    <h2>6. Dữ liệu chỉ nằm trên máy của bạn</h2>
+    <p>App không có tài khoản và <strong>không sao lưu dữ liệu lên đám mây</strong>. Tính năng sao lưu tự động dữ liệu app của Android cũng được tắt.</p>
+    <p>Vì vậy, nếu bạn gỡ app, xóa dữ liệu của app trong Cài đặt Android, dùng mục “Xóa toàn bộ dữ liệu” trong app, đổi điện thoại hoặc mất máy, dữ liệu trong app <strong>sẽ mất và chúng tôi không khôi phục được</strong>.</p>
+    <p>Bạn tự bảo quản điện thoại của mình, ví dụ đặt khóa màn hình và cập nhật hệ điều hành.</p>
+  </section>
+
+  <section id="vi-7">
+    <h2>7. Dịch vụ của bên thứ ba</h2>
+    <p>App dùng hoặc dựa vào các dịch vụ sau. Mỗi dịch vụ có điều khoản và chính sách riêng:</p>
+    <ul>
+      <li><strong>Open-Meteo</strong> (<a href="https://open-meteo.com" rel="noopener">https://open-meteo.com</a>): dự báo thời tiết theo tọa độ thành phố bạn chọn. Dữ liệu thời tiết theo giấy phép CC BY 4.0.</li>
+      <li><strong>Google ML Kit, qua Google Play services</strong> (chỉ trên Android): tách nền ảnh ngay trên điện thoại (<a href="https://developers.google.com/ml-kit/terms" rel="noopener">https://developers.google.com/ml-kit/terms</a>). Ảnh không được gửi đi; ML Kit gửi cho Google một số số liệu kỹ thuật, xem Chính sách quyền riêng tư mục 3.</li>
+      <li><strong>Google Play:</strong> phân phối và cập nhật app, theo Điều khoản dịch vụ của Google Play.</li>
+    </ul>
+    <p>Chúng tôi không kiểm soát các dịch vụ này và không chịu trách nhiệm khi chúng ngừng hoạt động, thay đổi hay cho kết quả không chính xác. Khi một dịch vụ không dùng được, tính năng liên quan có thể tạm ngừng (ví dụ: không có thời tiết).</p>
+  </section>
+
+  <section id="vi-8">
+    <h2>8. Sở hữu trí tuệ</h2>
+    <p>App, gồm tên Daily Stylist, giao diện và mã nguồn, thuộc về chúng tôi hoặc bên cấp phép cho chúng tôi. Chúng tôi cho phép bạn dùng app miễn phí cho mục đích cá nhân, phi thương mại, trên thiết bị của bạn, theo Điều khoản này. Quyền này không độc quyền, không chuyển nhượng được và không chuyển cho bạn quyền sở hữu nào đối với app.</p>
+    <ul>
+      <li>Phông chữ Playfair Display và Be Vietnam Pro được dùng theo giấy phép SIL Open Font License 1.1 (<a href="https://openfontlicense.org" rel="noopener">https://openfontlicense.org</a>).</li>
+      <li>Dữ liệu thời tiết do Open-Meteo.com cung cấp theo giấy phép Creative Commons Attribution 4.0 (CC BY 4.0). App ghi nguồn ngay cạnh thông tin thời tiết.</li>
+    </ul>
+    <p>Nội dung của bạn vẫn thuộc về bạn như ở mục 4.</p>
+  </section>
+
+  <section id="vi-9">
+    <h2>9. Miễn trừ trách nhiệm</h2>
+    <p>App được cung cấp miễn phí, <strong>theo hiện trạng</strong> và <strong>theo khả năng sẵn có</strong>. Trong phạm vi pháp luật Việt Nam cho phép, chúng tôi không bảo đảm app không có lỗi, hoạt động liên tục, hay gợi ý, dự báo thời tiết và kết quả tách nền ảnh luôn chính xác hoặc phù hợp với nhu cầu của bạn.</p>
+  </section>
+
+  <section id="vi-10">
+    <h2>10. Giới hạn trách nhiệm</h2>
+    <p>Trong phạm vi pháp luật Việt Nam cho phép, chúng tôi không chịu trách nhiệm về thiệt hại gián tiếp, hoặc thiệt hại phát sinh từ: việc bạn làm theo gợi ý của app; dữ liệu bị mất do gỡ app, xóa dữ liệu, đổi hoặc mất điện thoại; sự cố của dịch vụ bên thứ ba; hoặc nội dung bạn tự lưu trong app.</p>
+    <p><strong>Không điều nào trong Điều khoản này loại trừ hoặc hạn chế</strong> các quyền của bạn với tư cách người tiêu dùng theo Luật Bảo vệ quyền lợi người tiêu dùng số 19/2023/QH15, hay trách nhiệm mà pháp luật Việt Nam không cho phép loại trừ hoặc hạn chế.</p>
+  </section>
+
+  <section id="vi-11">
+    <h2>11. Thay đổi điều khoản</h2>
+    <p>Chúng tôi có thể cập nhật Điều khoản này, ví dụ khi app có tính năng mới hoặc khi pháp luật thay đổi. Mỗi lần cập nhật, phiên bản và ngày hiệu lực sẽ thay đổi.</p>
+    <p>Khi Điều khoản thay đổi, app sẽ <strong>thông báo và hỏi bạn đồng ý lại</strong> ngay trong app trước khi bạn tiếp tục dùng. Nếu không đồng ý với bản mới, bạn có thể ngừng dùng app, xóa toàn bộ dữ liệu và gỡ app.</p>
+  </section>
+
+  <section id="vi-12">
+    <h2>12. Chấm dứt</h2>
+    <p>Bạn có thể ngừng dùng app <strong>bất cứ lúc nào</strong>: xóa toàn bộ dữ liệu trong Cài đặt của app (nếu muốn) rồi gỡ app. Bạn không cần báo cho chúng tôi.</p>
+    <p>Chúng tôi có thể ngừng phát triển hoặc gỡ app khỏi Google Play. Khi đó, bản đã cài trên máy của bạn có thể vẫn chạy nhưng không còn được cập nhật, và các tính năng dựa vào dịch vụ bên ngoài (như thời tiết) có thể ngừng hoạt động.</p>
+  </section>
+
+  <section id="vi-13">
+    <h2>13. Luật áp dụng và giải quyết tranh chấp</h2>
+    <p>Điều khoản này được điều chỉnh bởi pháp luật Việt Nam.</p>
+    <p>Nếu có vướng mắc, hãy liên hệ chúng tôi qua email ở mục 14 để thương lượng trước. Nếu không giải quyết được, tranh chấp được giải quyết theo các phương thức pháp luật Việt Nam quy định, gồm cả các phương thức dành cho người tiêu dùng, hoặc tại Tòa án có thẩm quyền của Việt Nam.</p>
+    <p>Nếu một phần của Điều khoản này bị coi là vô hiệu, các phần còn lại vẫn có hiệu lực.</p>
+  </section>
+
+  <section id="vi-14">
+    <h2>14. Liên hệ</h2>
+    <ul>
+      <li>Người phát triển: <strong>Nguyễn Công Tài (White Comet Studio)</strong></li>
+      <li>Email: <a href="mailto:studio.whitecomet@gmail.com">studio.whitecomet@gmail.com</a></li>
+      <li>Bản web của Điều khoản này: <a href="https://whitecomet-studio.github.io/daily-stylist/terms.html" rel="noopener">https://whitecomet-studio.github.io/daily-stylist/terms.html</a></li>
+    </ul>
+  </section>
+</article>
+
+<hr class="divider">
+
+<!-- ===================== ENGLISH ===================== -->
+<article id="en" lang="en">
+  <p class="brand">Daily Stylist</p>
+  <h1>Terms of Service</h1>
+  <p class="meta">Effective from 5 October 2026 · Version 2026-10-05</p>
+
+  <nav class="lang-nav" aria-label="Language / Ngôn ngữ">
+    <a href="#vi" hreflang="vi">Tiếng Việt</a>
+    <a href="#en" aria-current="true">English</a>
+  </nav>
+
+  <p class="note">Please read these terms before using the app. They go together with the app’s Privacy Policy. This is a translation of the Vietnamese version. If the two versions differ, the Vietnamese version prevails.</p>
+
+  <section class="summary" aria-labelledby="en-summary">
+    <h2 id="en-summary">At a glance</h2>
+    <ul>
+      <li>Daily Stylist is <strong>free</strong> and only for people <strong>aged 18 or older</strong>.</li>
+      <li>Outfit suggestions and weather are <strong>for reference only</strong>. You decide what to wear.</li>
+      <li>Your photos and data <strong>belong to you and stay on your phone</strong>. There is no cloud backup: uninstalling the app or deleting its data removes them.</li>
+      <li>Photograph clothes only, <strong>no people</strong>, and do not store unlawful content.</li>
+      <li>When these Terms change, the app will tell you and ask you to agree again.</li>
+    </ul>
+  </section>
+
+  <nav class="toc" aria-labelledby="en-toc">
+    <p class="toc-title" id="en-toc">Contents</p>
+    <ul>
+      <li><a href="#en-1">1. Accepting these Terms</a></li>
+      <li><a href="#en-2">2. Age</a></li>
+      <li><a href="#en-3">3. The service</a></li>
+      <li><a href="#en-4">4. Your content</a></li>
+      <li><a href="#en-5">5. Acceptable use</a></li>
+      <li><a href="#en-6">6. Your data stays on your phone</a></li>
+      <li><a href="#en-7">7. Third-party services</a></li>
+      <li><a href="#en-8">8. Intellectual property</a></li>
+      <li><a href="#en-9">9. Disclaimer</a></li>
+      <li><a href="#en-10">10. Limitation of liability</a></li>
+      <li><a href="#en-11">11. Changes to these Terms</a></li>
+      <li><a href="#en-12">12. Termination</a></li>
+      <li><a href="#en-13">13. Governing law and disputes</a></li>
+      <li><a href="#en-14">14. Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="en-1">
+    <h2>1. Accepting these Terms</h2>
+    <p>These Terms of Service (“Terms”) are an agreement between you and <strong>Nguyễn Công Tài (White Comet Studio)</strong>, the individual who develops and publishes the Daily Stylist application (“the app”) in Vietnam (“we”, “us”).</p>
+    <p>By ticking the consent box in the app and using the app, you confirm that you have read, understood and agree to these Terms and to the app’s Privacy Policy. The Privacy Policy explains how the app handles data and forms part of these Terms.</p>
+    <p>If you do not agree, please do not use the app. You can delete all data in the app’s Settings and then uninstall it.</p>
+  </section>
+
+  <section id="en-2">
+    <h2>2. Age</h2>
+    <p>The app is only for people <strong>aged 18 or older</strong>. When you start, the app asks you to confirm that you are 18 or older. If you are under 18, please do not use the app.</p>
+  </section>
+
+  <section id="en-3">
+    <h2>3. The service</h2>
+    <p>Daily Stylist is a <strong>free</strong> app that helps you keep photos of the clothes you own, tag them, log what you wore and get daily outfit suggestions from your own wardrobe, taking into account the weather of the city you pick.</p>
+    <p>Suggestions are generated automatically on your phone by simple rules (category, color, warmth, weather and your past choices). They are <strong>for reference only</strong> and may not suit your taste, the occasion or the actual weather. Forecasts can be wrong. You decide what you wear.</p>
+    <p>On Android, the app can automatically remove the background of item photos and crop closely around the item. The result may not be accurate for every photo; you can always keep the original photo or crop it yourself.</p>
+    <p>The app currently has no ads and sells nothing in the app. We may change, add or remove features in updates, and we do not promise that the app will always be available or free of errors.</p>
+  </section>
+
+  <section id="en-4">
+    <h2>4. Your content</h2>
+    <p>The photos and details you add to the app (“your content”) <strong>belong to you</strong>. Your content stays on your phone: we do not receive it, see it or have any rights to it.</p>
+    <p>You confirm that you have the right to use the photos you add, for example photos you took of your own clothes.</p>
+    <p>Please <strong>do not</strong> add:</p>
+    <ul>
+      <li><strong>photos of people</strong>, including yourself (faces, bodies, mirror reflections), or photos showing documents or personal information;</li>
+      <li><strong>photos you have no right to use</strong>, or photos that infringe other people’s privacy or copyright;</li>
+      <li><strong>content that is unlawful in Vietnam</strong>, such as pornographic or violent content or other prohibited content.</li>
+    </ul>
+    <p>You are responsible for the content you store in the app.</p>
+  </section>
+
+  <section id="en-5">
+    <h2>5. Acceptable use</h2>
+    <p>You agree to use the app for personal, non-commercial purposes and not to use it to break the law.</p>
+    <p>Except where the law allows it, you will not copy, modify, redistribute or reverse engineer the app, and you will not use the app to send automated bulk requests to the weather service or to interfere with third-party services.</p>
+  </section>
+
+  <section id="en-6">
+    <h2>6. Your data stays on your phone</h2>
+    <p>The app has no accounts and <strong>does not back up data to the cloud</strong>. Android’s automatic backup of app data is turned off as well.</p>
+    <p>So if you uninstall the app, clear its data in Android settings, use “Xóa toàn bộ dữ liệu” (Delete all data) in the app, change phones or lose your phone, the app’s data <strong>will be lost and we cannot restore it</strong>.</p>
+    <p>You are responsible for looking after your phone, for example by using a screen lock and keeping the system updated.</p>
+  </section>
+
+  <section id="en-7">
+    <h2>7. Third-party services</h2>
+    <p>The app uses or relies on the following services, each with its own terms and policies:</p>
+    <ul>
+      <li><strong>Open-Meteo</strong> (<a href="https://open-meteo.com" rel="noopener">https://open-meteo.com</a>): weather forecasts for the coordinates of the city you pick. Weather data is licensed under CC BY 4.0.</li>
+      <li><strong>Google ML Kit, through Google Play services</strong> (Android only): on-device background removal of photos (<a href="https://developers.google.com/ml-kit/terms" rel="noopener">https://developers.google.com/ml-kit/terms</a>). Photos are not sent anywhere; ML Kit sends Google some technical metrics, see section 3 of the Privacy Policy.</li>
+      <li><strong>Google Play:</strong> distribution and updates of the app, under the Google Play Terms of Service.</li>
+    </ul>
+    <p>We do not control these services and are not responsible if they stop working, change or return inaccurate results. When a service is unavailable, the related feature may pause (for example, no weather).</p>
+  </section>
+
+  <section id="en-8">
+    <h2>8. Intellectual property</h2>
+    <p>The app, including the Daily Stylist name, its interface and its code, belongs to us or our licensors. We let you use the app free of charge for personal, non-commercial purposes on your devices, under these Terms. This permission is non-exclusive and non-transferable, and does not give you any ownership of the app.</p>
+    <ul>
+      <li>The Playfair Display and Be Vietnam Pro fonts are used under the SIL Open Font License 1.1 (<a href="https://openfontlicense.org" rel="noopener">https://openfontlicense.org</a>).</li>
+      <li>Weather data is provided by Open-Meteo.com under the Creative Commons Attribution 4.0 license (CC BY 4.0). The app credits the source next to the weather information.</li>
+    </ul>
+    <p>Your content remains yours, as described in section 4.</p>
+  </section>
+
+  <section id="en-9">
+    <h2>9. Disclaimer</h2>
+    <p>The app is provided free of charge, <strong>as is</strong> and <strong>as available</strong>. To the extent permitted by Vietnamese law, we do not guarantee that the app is free of errors or always available, or that suggestions, weather forecasts and background removal results are always accurate or suitable for your needs.</p>
+  </section>
+
+  <section id="en-10">
+    <h2>10. Limitation of liability</h2>
+    <p>To the extent permitted by Vietnamese law, we are not liable for indirect damage, or for damage arising from: following the app’s suggestions; data lost by uninstalling the app, deleting data, or changing or losing your phone; problems with third-party services; or content you store in the app.</p>
+    <p><strong>Nothing in these Terms excludes or limits</strong> your rights as a consumer under Vietnam’s Law on Protection of Consumers’ Rights No. 19/2023/QH15, or any liability that Vietnamese law does not allow to be excluded or limited.</p>
+  </section>
+
+  <section id="en-11">
+    <h2>11. Changes to these Terms</h2>
+    <p>We may update these Terms, for example when the app gets new features or when the law changes. Each update changes the version and the effective date.</p>
+    <p>When these Terms change, the app will <strong>tell you and ask you to agree again</strong> in the app before you continue using it. If you do not agree with the new version, you can stop using the app, delete all data and uninstall it.</p>
+  </section>
+
+  <section id="en-12">
+    <h2>12. Termination</h2>
+    <p>You can stop using the app <strong>at any time</strong>: delete all data in the app’s Settings (if you wish) and uninstall the app. You do not need to tell us.</p>
+    <p>We may stop developing the app or remove it from Google Play. In that case the copy on your phone may keep working but will no longer be updated, and features that rely on outside services (such as weather) may stop working.</p>
+  </section>
+
+  <section id="en-13">
+    <h2>13. Governing law and disputes</h2>
+    <p>These Terms are governed by the laws of Vietnam.</p>
+    <p>If you have a concern, please contact us at the email in section 14 so we can try to resolve it first. If it cannot be resolved, the dispute will be settled by the methods provided for by Vietnamese law, including those available to consumers, or by a competent court of Vietnam.</p>
+    <p>If any part of these Terms is found invalid, the remaining parts stay in effect.</p>
+  </section>
+
+  <section id="en-14">
+    <h2>14. Contact</h2>
+    <ul>
+      <li>Developer: <strong>Nguyễn Công Tài (White Comet Studio)</strong></li>
+      <li>Email: <a href="mailto:studio.whitecomet@gmail.com">studio.whitecomet@gmail.com</a></li>
+      <li>Web version of these Terms: <a href="https://whitecomet-studio.github.io/daily-stylist/terms.html" rel="noopener">https://whitecomet-studio.github.io/daily-stylist/terms.html</a></li>
+    </ul>
+  </section>
+</article>
+
+<footer>
+  <p>Daily Stylist · Điều khoản sử dụng / Terms of Service · Phiên bản / Version 2026-10-05</p>
+  <p>Xem thêm / See also: <a href="https://whitecomet-studio.github.io/daily-stylist/privacy.html">Chính sách quyền riêng tư / Privacy Policy</a></p>
+</footer>
+
+</main>
+</body>
+</html>
