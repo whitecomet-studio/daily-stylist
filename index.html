@@ -21,6 +21,8 @@
     email studio (SD-16) hỏi Gmail dùng trên CH Play, xác nhận 18+, đời máy. Xử lý và thời hạn xóa: SD-17, data map DS-15.
     Mọi địa chỉ email trong trang phải trùng SUPPORT_EMAIL ở app/src/lib/contact.ts: "node site/sync-legal.mjs --check".
   - Ảnh quần áo: thu nhỏ từ app/assets/dev-samples (Pexels/Unsplash, xem CREDITS.md trong thư mục đó).
+  - Chân trang: dòng nhãn hiệu Google (IP-13) và link third-party-notices.txt (bản chép tự sinh, IP-01);
+    "node site/sync-legal.mjs --check" báo lỗi nếu thiếu.
   - Cách đăng lên web: docs/release/README.md, mục "Trang web".
 -->
 <style>
@@ -273,8 +275,12 @@
     <a href="privacy.html">Chính sách quyền riêng tư</a>
     <span aria-hidden="true">&nbsp;·&nbsp;</span>
     <a href="terms.html">Điều khoản sử dụng</a>
+    <span aria-hidden="true">&nbsp;·&nbsp;</span>
+    <a href="third-party-notices.txt">Giấy phép mã nguồn mở</a>
   </nav>
   <p class="fine">Trang này không dùng cookie hay công cụ theo dõi.</p>
+  <p class="fine">Ảnh quần áo minh họa: <a href="https://www.pexels.com">Pexels</a>, <a href="https://unsplash.com">Unsplash</a>.</p>
+  <p class="fine">Android, Google Play và Gmail là nhãn hiệu của Google LLC. Daily Stylist không liên kết với Google.</p>
 </footer>
 
 </body>
